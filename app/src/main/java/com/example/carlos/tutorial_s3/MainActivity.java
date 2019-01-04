@@ -1,10 +1,12 @@
 package com.example.carlos.tutorial_s3;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
@@ -55,12 +57,21 @@ public class MainActivity extends AppCompatActivity {
         mRecyclerView.setAdapter(mAdapter);
     }
 // ...
+
+    //BOTON PARA HACER EL INTENT Y SALTAR A LA SEGUNDA ACTIVITY
+
+    public void nextActivity(View v){
+        Intent intent = new Intent(this, SecondActivity.class);
+        startActivity(intent);
+    }
 }
+
+
 
 
 //*********************AQUI COPIAMOS LA CLASE MyAdapter****************************
 //******************TMABIEN PODRIAMOS CREAR LA CLASE EN UN .JAVA SEPARADO**********
-public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
+class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     private String[] mDataset;
     // Provide a reference to the views for each data item
     public static class MyViewHolder extends RecyclerView.ViewHolder {
@@ -118,3 +129,5 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 }
     //************************************************************************************************************************
     //************************************************************************************************************************
+
+
